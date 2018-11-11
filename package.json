@@ -1,9 +1,26 @@
 {
-  "name": "gatsby-starter-gcn",
-  "description": "A starter template to build amazing static websites with Gatsby, Contentful and Netlify",
-  "version": "2.0.3",
-  "repository": "https://github.com/ryanwiemer/gatsby-starter-gcn",
-  "author": "Ryan Wiemer <ryan@ryanwiemer.com>",
+  "name": "triple-p",
+  "description": "A static website built with Gatsby, Contentful and Netlify",
+  "version": "1.0.0",
+  "repository": "https://github.com/pwltr/triple-p",
+  "author": "Philipp Walter <philippwalter@pm.me>",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
+    "setup": "node ./bin/setup.js",
+    "dev": "gatsby develop",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:css": "stylelint 'src/**/*.js'",
+    "check-pretty": "prettier -l {,src/**/}*.{js,jsx,json,css,scss}",
+    "format": "prettier --write \"src/**/*.js\"",
+    "clean": "rm -rf public .cache"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "chalk": "^2.4.1",
@@ -35,23 +52,6 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.0.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
-    "setup": "node ./bin/setup.js",
-    "dev": "gatsby develop",
-    "lint:js": "eslint --ext .js,.jsx .",
-    "lint:css": "stylelint 'src/**/*.js'",
-    "check-pretty": "prettier -l {,src/**/}*.{js,jsx,json,css,scss}",
-    "format": "prettier --write \"src/**/*.js\"",
-    "clean": "rm -rf public .cache"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

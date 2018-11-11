@@ -9,18 +9,18 @@ import SEO from '../components/SEO'
 
 const Contact = ({ data }) => {
   const postNode = {
-    title: `Contact - ${config.siteTitle}`,
+    title: `Kontakt - ${config.siteTitle}`,
   }
 
   return (
     <Layout>
       <Helmet>
-        <title>{`Contact - ${config.siteTitle}`}</title>
+        <title>{`Kontakt - ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postNode={postNode} pagePath="contact" customTitle />
 
       <Container>
-        <PageTitle>Contact</PageTitle>
+        <PageTitle>Kontakt</PageTitle>
         <ContactForm />
       </Container>
     </Layout>
