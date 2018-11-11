@@ -21,10 +21,8 @@ const Template = ({ children }) => {
       <ThemeProvider theme={theme}>
         <>
           <div className="siteContent">
-            <Menu />
             {children}
           </div>
-          <Footer />
         </>
       </ThemeProvider>
       <GlobalStyle />
