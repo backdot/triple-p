@@ -1,35 +1,33 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
+import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
 import Container from '../components/Container'
 import SEO from '../components/SEO'
-import config from '../utils/siteConfig'
+import PageTitle from '../components/PageTitle'
+import MemberList from '../components/MemberList'
+import Member from '../components/Member'
 
 const Band = ({ data }) => {
   const members = data.allContentfulBandMember.edges
 
-  console.log(members);
-
   return (
     <Layout>
+      <Helmet>
+        <title>{`${config.siteTitle} | Band`}</title>
+      </Helmet>
       <SEO />
       <Container>
-        <CardList>
+        <PageTitle>Band</PageTitle>
+        <MemberList>
           {members.map(({ node: member }) => (
-            <div key={member.id}>
-              <div>{member.name}</div>
-              <div>{member.shortName}</div>
-              <div>{member.role}</div>
-              <div>{member.description.description}</div>
-              <img src={member.image.file.url}/>
-            </div>
-            // <Card key={member.id} {...member} />
+            <li key={member.id}>
+              <Member {...member} />
+            </li>
           ))}
-        </CardList>
+        </MemberList>
       </Container>
     </Layout>
   )
@@ -37,9 +35,10 @@ const Band = ({ data }) => {
 
 export const query = graphql`
   query {
-    allContentfulBandMember {
+    allContentfulBandMember(filter: {node_locale: {eq: "de"}}, sort: {fields: name, order: ASC}) {
       edges {
         node {
+          id
           name
           shortName
           description {
