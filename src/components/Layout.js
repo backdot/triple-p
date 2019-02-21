@@ -8,7 +8,7 @@ import config from '../utils/siteConfig'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 
-const Template = ({ children }) => {
+const Layout = ({ children, wrapperClass }) => {
   return (
     <div className="siteRoot">
       <Helmet>
@@ -20,7 +20,7 @@ const Template = ({ children }) => {
 
       <ThemeProvider theme={theme}>
         <>
-          <div className="siteContent">
+          <div className={`${wrapperClass} siteContent`}>
             <Menu />
             {children}
           </div>
@@ -32,4 +32,4 @@ const Template = ({ children }) => {
   )
 }
 
-export default Template
+export default Layout
