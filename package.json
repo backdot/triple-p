@@ -2,7 +2,7 @@
   "name": "triple-p",
   "description": "A static website built with Gatsby, Contentful and Netlify",
   "version": "1.0.0",
-  "repository": "https://github.com/pwltr/triple-p",
+  "repository": "https://github.com/backdot/triple-p",
   "author": "Philipp Walter <philippwalter@pm.me>",
   "keywords": [
     "gatsby"
